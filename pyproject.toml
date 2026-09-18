@@ -3,8 +3,6 @@ name = "temperature-lombardia"
 version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
-    "datetime>=6.0",
-    "logging>=0.4.9.6",
     "matplotlib>=3.11.2",
     "numpy>=2.5.3",
     "openpyxl>=3.1.5",
