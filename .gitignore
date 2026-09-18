@@ -1,0 +1,11 @@
+# Python-generated files
+__pycache__/
+
+# Virtual environment
+.venv/
+
+# Output files
+output/
+
+# Logs
+log/
