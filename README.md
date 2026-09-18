@@ -1,6 +1,6 @@
 # Temperature Lombardia Forecast
 
-Script Python per l'elaborazione automatica delle previsioni ensemble di temperatura delle sottozone climatiche della Lombardia tramite le API Open-Meteo.
+Script Python per l'elaborazione automatica delle previsioni ensemble di temperatura delle sottozone climatiche della Lombardia tramite le API Open-Meteo, con lo scopo di fornire un Bollettino per posticipare/anticipare la stagione di accensione/spegnimento dell'impianto di riscaldamento in Lombardia.
 
 Il processo:
 
