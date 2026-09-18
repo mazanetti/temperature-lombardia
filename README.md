@@ -171,9 +171,17 @@ contenente:
 
 ---
 
-## Configurazione tramite variabili d'ambiente
+## Configurazione
 
-Tutti i principali parametri possono essere personalizzati senza modificare il codice.
+È possibile personalizzare il comportamento dell'applicazione tramite variabili d'ambiente.
+
+Per partire dalla configurazione standard:
+
+```bash
+cp .env.example .env
+```
+
+e modificare i valori secondo le proprie esigenze.
 
 ### COMUNI_ZONE_PATH
 
