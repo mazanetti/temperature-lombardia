@@ -73,8 +73,6 @@ sys.stderr = _LogWriter(logging.ERROR)
 # File di input
 # ---------------------------------------------------------------------
 
-BASE_DIR = Path(__file__).resolve().parent
-
 # In Docker/Swarm i percorsi devono essere trasportabili: usa variabili
 # d'ambiente se impostate, altrimenti usa la struttura del progetto locale.
 COMUNI_ZONE_PATH = Path(
@@ -123,14 +121,6 @@ FORECAST_DAYS = int(
 MODEL = os.getenv(
     "MODEL",
     "ecmwf_aifs025_ensemble"
-)
-
-# Numero massimo di comuni da selezionare per ciascuna sottozona.
-MAX_COMUNI_PER_SOTTOZONA = int(
-    os.getenv(
-        "MAX_COMUNI_PER_SOTTOZONA",
-        "10"
-    )
 )
 
 logger.info("Esecuzione processo del %s", ESECUZIONE_GIORNO)
