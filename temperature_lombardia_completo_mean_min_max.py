@@ -107,6 +107,27 @@ OUTPUT_FOLDER.mkdir(parents=True, exist_ok=True)
 IMG_FOLDER.mkdir(parents=True, exist_ok=True)
 
 # ---------------------------------------------------------------------
+# Configurazione sottozone
+# ---------------------------------------------------------------------
+
+SOTTOZONE = range(1, 9)
+
+# Numero massimo di comuni da selezionare per ciascuna sottozona.
+#
+# Esempio:
+#   10 = massimo 10 comuni per sottozona
+#   15 = massimo 15 comuni per sottozona
+#
+# Se una sottozona contiene meno comuni del valore indicato,
+# vengono utilizzati tutti i comuni disponibili.
+MAX_COMUNI_PER_SOTTOZONA = int(
+    os.getenv(
+        "MAX_COMUNI_PER_SOTTOZONA",
+        "10"
+    )
+)
+
+# ---------------------------------------------------------------------
 # API Open-Meteo
 # ---------------------------------------------------------------------
 
@@ -168,28 +189,6 @@ API_MAX_RETRIES = int(
 PAUSA_TRA_RICHIESTE = int(
     os.getenv(
         "PAUSA_TRA_RICHIESTE",
-        "10"
-    )
-)
-
-
-# ---------------------------------------------------------------------
-# Configurazione sottozone
-# ---------------------------------------------------------------------
-
-SOTTOZONE = range(1, 9)
-
-# Numero massimo di comuni da selezionare per ciascuna sottozona.
-#
-# Esempio:
-#   10 = massimo 10 comuni per sottozona
-#   15 = massimo 15 comuni per sottozona
-#
-# Se una sottozona contiene meno comuni del valore indicato,
-# vengono utilizzati tutti i comuni disponibili.
-MAX_COMUNI_PER_SOTTOZONA = int(
-    os.getenv(
-        "MAX_COMUNI_PER_SOTTOZONA",
         "10"
     )
 )
