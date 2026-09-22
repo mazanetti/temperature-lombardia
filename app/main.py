@@ -18,7 +18,9 @@ import logging
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-BASE_DIR = Path(__file__).resolve().parent
+
+APP_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = APP_DIR.parent
 TZ = ZoneInfo("Europe/Rome")
 # =====================================================================
 # CONFIGURAZIONE
@@ -33,7 +35,7 @@ ESECUZIONE_GIORNO = (
 LOG_FOLDER = Path(
     os.getenv(
         "LOG_FOLDER",
-        str(BASE_DIR / "log")
+        str(PROJECT_ROOT / "log")
     )
 )
 LOG_FOLDER.mkdir(parents=True, exist_ok=True)
@@ -79,7 +81,7 @@ COMUNI_ZONE_PATH = Path(
     os.getenv(
         "COMUNI_ZONE_PATH",
         str(
-            BASE_DIR
+            PROJECT_ROOT
             / "utility"
             / "comuni_lombardia_zone_geo.csv"
         )
@@ -95,7 +97,7 @@ COMUNI_ZONE_PATH = Path(
 OUTPUT_FOLDER = Path(
     os.getenv(
         "OUTPUT_FOLDER",
-        str(BASE_DIR / "output")
+        str(PROJECT_ROOT / "output")
     )
 )
 

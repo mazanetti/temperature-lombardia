@@ -36,8 +36,8 @@ Il processo:
 ```text
 project/
 │
-├── temperature_lombardia.py
-│
+├── app
+│   └── main.py
 ├── utility/
 │   └── comuni_lombardia_zone_geo.csv
 │
@@ -188,7 +188,7 @@ e modificare i valori secondo le proprie esigenze.
 Percorso del file CSV di input.
 
 ```bash
-COMUNI_ZONE_PATH=/percorso/comuni_lombardia_zone_geo.csv
+COMUNI_ZONE_PATH=/utility/comuni_lombardia_zone_geo.csv
 ```
 
 ### OUTPUT_FOLDER
@@ -196,7 +196,7 @@ COMUNI_ZONE_PATH=/percorso/comuni_lombardia_zone_geo.csv
 Cartella dove salvare Excel e immagini.
 
 ```bash
-OUTPUT_FOLDER=/percorso/output
+OUTPUT_FOLDER=/output
 ```
 
 ### LOG_FOLDER
@@ -204,7 +204,7 @@ OUTPUT_FOLDER=/percorso/output
 Cartella contenente i file di log.
 
 ```bash
-LOG_FOLDER=/percorso/log
+LOG_FOLDER=log
 ```
 
 ### FORECAST_DAYS
@@ -323,18 +323,16 @@ uv add pandas numpy requests matplotlib openpyxl urllib3
 
 ### Esecuzione
 
-Con ambiente attivato:
+direttamente tramite uv:
 
 ```bash
-python temperature_lombardia.py
-```
-
-oppure direttamente tramite uv:
-
-```bash
-uv run temperature_lombardia.py
+uv run app/main.py
 ```
 ``
+### Build Docker 
+```bash
+docker build -f docker/Dockerfile -t temperature-lombardia:local .
+```
 
 ## Gestione errori
 
